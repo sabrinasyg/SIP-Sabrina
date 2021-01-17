@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(233, 243, 243);
+}
+
+tr > th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+tr > td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: rgba(102, 102, 102, 0);
+    font-family: "Courier New", Courier, monospace;
+    color: rgba(150, 151, 150, 0.075);
+}
+
+h3 {
+    font-family: Helvetica;
+    font-size: 20px;
+}
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #fc8a8a;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: rgb(189, 187, 187);
+    color: white;
+}
+
+.register {
+    font-family: Helvetica;
+    text-align: center;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.bg-home {
+    background-image: url("/img/bg59.jpg");
+    background-color: #000000;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    margin: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: rgba(255, 254, 254, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    width: 100%;
+}
+.register {
+    position: absolute;
+    color: #f1f1f1;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#back-to-top {
+    text-align: right;
+}
+
+#vertinav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.container {
+    position: relative;
+    max-width: 1200px;
+    margin-top: 0px;
+}
+
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 10px;
+    margin-top: 0px;
+}
+
+.form {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+    padding: 5px;
+    text-align: center;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: rgb(110, 109, 109);
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn,
+    .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}

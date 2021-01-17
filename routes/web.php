@@ -24,10 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
-Route::middleware('role:admin')->get('/dashboard', function () {
-    return 'dashboard';
-})->name('dashboard');
-
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
-    Route::resource('user', 'UserController');
+    Route::resource('/user', 'UserController')->name('index', 'user');
 });

@@ -165,4 +165,8 @@ h3 {
         float: none;
         width: 100%;
     }
+
+    .text-center img {
+        border-radius: 50%;
+    }
 }

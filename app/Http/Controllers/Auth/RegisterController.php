@@ -9,6 +9,7 @@ use App\Role;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -55,6 +56,11 @@ class RegisterController extends Controller
             'username' => ['required', 'string', 'max:25'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'address' => ['required', 'string', 'max:25'],
+            'img' => ['required'],
+            'grade' => ['required', 'string', 'max:25'],
+            'department' => ['required', 'string', 'max:25'],
+            'role_id' => ['required', 'string', 'max:25'],
         ]);
     }
 
@@ -71,6 +77,11 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'img' => $data['img'],
+            'grade' => $data['grade'],
+            'department' => $data['department'],
+            'address' => $data['address'],
+            'role_id' => $data['role_id']
         ]);
 
         $user->roles()->attach(Role::where('name', 'user')->first());

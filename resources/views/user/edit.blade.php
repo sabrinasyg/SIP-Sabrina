@@ -11,7 +11,7 @@
             <div class="card text">
                 <h5 class="card-header">Edit</h5>
                 <div class="card-body">
-                    <form method="POST" action="/admin/user/{{ $user->id }}">
+                    <form method="POST" action="/admin/user/{{ $user->id }}" enctype="multipart/form-data">
                         @method('patch')
                         @csrf
                         <div class="row">
@@ -37,12 +37,42 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Your password" name="password" value="{{ $user->password }}">
+                                    @error('password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" id="address" placeholder="Your address" name="address" value="{{ $user->address }}">
+                                    @error('address')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="text" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Your password" name="password" value="{{ $user->password }}">
-                                    @error('password')
+                                    <label for="grade">Grade</label>
+                                    <select class="form-control @error('grade') is-invalid @enderror" id="grade" name="grade" value="{{ $user->grade }}">
+                                        <option value="-">-Select-
+                                        <option value="Kelas 10">Kelas 10</option>
+                                        <option value="Kelas 11">Kelas 11</option>
+                                        <option value="Kelas 12">Kelas 12</option>
+                                    </select>
+                                    @error('grade')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                    <select class="form-control @error('department') is-invalid @enderror" id="department" name="department" value="{{ $user->department }}">
+                                        <option value="-">-Select-
+                                        <option value="IPA">IPA</option>
+                                        <option value="IPS">IPS</option>
+                                    </select>
+                                    @error('department')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -53,10 +83,17 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label for="img">Photo</label>
+                                    <input type="file" class="form-control" name="img" value="{{ $user->img }}">
+                                    @error('img')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <input type="submit" class="btn btn-primary" value="Submit"></button>
+                            <input type="submit" class="btn btn-primary" value="Submit" style="margin-left: 40%"></button>
                             <a href="/admin/user" type="button" class="btn btn-danger">Cancel</a>
                         </div>
                     </form>

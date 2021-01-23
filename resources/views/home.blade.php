@@ -23,7 +23,7 @@
                                         <div class="card">
                                             <h2>Mari Kita Terapkan Protokol Kesehatan 3M</h2>
                                             <h5>Admin, Nov 15, 2020</h5>
-                                            <img class="card-img-top align-self-center p-4" src="/img/3m.jpeg" alt="Card image cap" style="width: auto; height: auto">
+                                            <img class="card-img-top align-self-center p-4" src="/img/3m.jpeg" alt="Card image cap" style="width: 30%; height: 30%">
                                             <p>Demi menghindari kita dari virus corona yang sedang merajalela di seluruh dunia, mari kita terapkan protokol kesehatan 3M sesuai yang telah dianjurkan oleh gubernur DKI Jakarta</p>
                                         </div>
                                         <div class="card">

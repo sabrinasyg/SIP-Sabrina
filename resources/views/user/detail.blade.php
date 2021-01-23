@@ -17,6 +17,10 @@
                 <h5 class="card-header">Detail</h5>
                 <fieldset disabled>
                     <div class="card-body">
+                        <div class="photo">
+                            <img class="rounded-circle mx-auto d-block" src="{{ asset('img/'.$user->img) }}" alt="Card image cap" style="width: 20%; height: 20%; border-radius: 50%;">
+                            <p class="text-center"><a href="{{ asset('img/'.$user->img) }}" download>Download Photo</a></p>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -31,11 +35,32 @@
                                     <label for="email">Email</label>
                                     <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Your email" name="email" value="{{ $user->email }}">
                                 </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Your password" name="password" value="{{ $user->password }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" id="address" placeholder="Your address" name="address" value="{{ $user->address }}">
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="text" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Your password" name="password" value="{{ $user->password }}">
+                                    <label for="grade">Grade</label>
+                                    <select class="form-control @error('grade') is-invalid @enderror" id="grade" name="grade" value="{{ $user->grade }}">
+                                        <option value="-">-Select-
+                                        <option value="Kelas 10">Kelas 10</option>
+                                        <option value="Kelas 11">Kelas 11</option>
+                                        <option value="Kelas 12">Kelas 12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                    <select class="form-control @error('department') is-invalid @enderror" id="department" name="department" value="{{ $user->department }}">
+                                        <option value="-">-Select-
+                                        <option value="IPA">IPA</option>
+                                        <option value="IPS">IPS</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="role_id">Role_id</label>
@@ -43,13 +68,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <input type="submit" class="btn btn-primary" value="Submit"></button>
-                            <a href="/admin/user" type="button" class="btn btn-danger">Cancel</a>
-                        </div>
                         </form>
                     </div>
                 </fieldset>
+                <div class="card-footer">
+                    <a class="btn btn-warning" href="{{ route('user.edit',$user->id) }}" style="margin-left: 45%">Edit Data</a>
+                </div>
             </div>
         </div>
     </div>

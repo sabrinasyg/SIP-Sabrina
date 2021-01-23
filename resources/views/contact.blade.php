@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <h1 style="text-align: center;">Contact Us</h1><br>
             @csrf
-            <form>
+            <form method="POST" action="#">
                 <div class="form-group row">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
